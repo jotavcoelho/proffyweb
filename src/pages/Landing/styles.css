@@ -102,6 +102,7 @@
     grid-template-areas: 
       "logo hero hero"
       "buttons buttons total"
+      /* this is new to me */
     ;
   }
 
