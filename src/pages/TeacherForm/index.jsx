@@ -3,6 +3,8 @@ import React from 'react';
 import PageHeader from '../../components/PageHeader';
 import Input from '../../components/Input';
 
+import warningIcon from '../../assets/images/icons/warning.svg';
+
 import './styles.css';
 
 function TeacherForm() {
@@ -28,6 +30,17 @@ function TeacherForm() {
           <Input name="subject" label="Subject" />
           <Input name="cost" label="Cost per hour of class" />
         </fieldset>
+
+        <footer>
+          <p>
+            <img src={warningIcon} alt="Important warning"/>
+            Important! <br/>
+            Fill all fields
+          </p>
+          <button type="button">
+            Save
+          </button>
+        </footer>
       </main>
     </div>
   )
