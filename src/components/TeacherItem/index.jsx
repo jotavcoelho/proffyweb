@@ -35,8 +35,8 @@ function TeacherItem({ teacherData }) {
           href={`https://wa.me/${teacherData.whatsapp}`} 
           target="_blank"
           onClick={() => handleConnect(teacherData.id)} >
-          <img src={whatsappIcon} alt="Whatsapp"/>
-          Get in touch
+            <img src={whatsappIcon} alt="Whatsapp"/>
+            Get in touch
         </a>
       </footer>
     </article>
