@@ -33,8 +33,6 @@
   background-color: var(--color-secondary-dark);
 }
 
-}
-
 #page-teacher-list main {
   margin: 3.2rem auto;
   width: 90%;
@@ -47,7 +45,7 @@
 
   #search-teachers {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr) 0.5fr;
     column-gap: 16px;
     position: absolute;
     bottom: -28px;

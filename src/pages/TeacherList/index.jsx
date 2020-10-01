@@ -5,15 +5,29 @@ import TeacherItem from '../../components/TeacherItem';
 import Input from '../../components/Input';
 import Select from '../../components/Select';
 
+import api from '../../services/api';
+
 import './styles.css';
 
 function TeacherList() {
+  const [teachers, setTeachers] = useState([]);
+
   const [subject, setSubject] = useState('');
   const [weekday, setWeekday] = useState('');
   const [time, setTime] = useState('');
 
-  function searchTeachers(e) {
+  async function searchTeachers(e) {
     e.preventDefault();
+
+    const response = await api.get('/classes', {
+      params: {
+        subject,
+        weekday,
+        time
+      }
+    });
+
+    setTeachers(response.data);
   }
 
   return (
@@ -66,11 +80,12 @@ function TeacherList() {
       </PageHeader>
 
       <main>
-        <TeacherItem />
-        <TeacherItem />
-        <TeacherItem />
-        <TeacherItem />
-        <TeacherItem />
+        {teachers.map(teacher => {
+          return <TeacherItem 
+            key={teacher.id} 
+            teacherData={teacher} 
+          />
+        })}
       </main>
     </div>
   )
