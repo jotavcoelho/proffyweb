@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import PageHeader from '../../components/PageHeader';
 import TeacherItem from '../../components/TeacherItem';
@@ -8,13 +8,23 @@ import Select from '../../components/Select';
 import './styles.css';
 
 function TeacherList() {
+  const [subject, setSubject] = useState('');
+  const [weekday, setWeekday] = useState('');
+  const [time, setTime] = useState('');
+
+  function searchTeachers(e) {
+    e.preventDefault();
+  }
+
   return (
     <div id="page-teacher-list" className="container">
       <PageHeader title="These are the available proffys.">
-        <form id="search-teachers">
+        <form id="search-teachers" onSubmit={searchTeachers} >
           <Select 
             name="subject" 
             label="Subject" 
+            value={subject}
+            onChange={e => setSubject(e.target.value)}
             options={[
               { value: 'Art', label: 'Art' },
               { value: 'Biology', label: 'Biology' },
@@ -29,6 +39,8 @@ function TeacherList() {
           <Select 
             name="weekday" 
             label="Weekday" 
+            value={weekday}
+            onChange={e => setWeekday(e.target.value)}
             options={[
               { value: '0', label: 'Sunday' },
               { value: '1', label: 'Monday' },
@@ -39,7 +51,17 @@ function TeacherList() {
               { value: '6', label: 'Saturday' },
             ]}
           />
-          <Input name="time" label="Time" type="time" />
+          <Input 
+            name="time" 
+            label="Time" 
+            type="time" 
+            value={time}
+            onChange={e => setTime(e.target.value)}
+          />
+
+          <button type="submit">
+            Search
+          </button>
         </form>
       </PageHeader>
 
