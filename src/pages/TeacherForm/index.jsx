@@ -140,7 +140,7 @@ function TeacherForm() {
 
             {scheduleItems.map((scheduleItem, index) => {
               return (
-                <div key={scheduleItem.weekday} className="schedule-item">
+                <div key={index} className="schedule-item">
                   <Select 
                     name="weekday" 
                     label="Weekday" 

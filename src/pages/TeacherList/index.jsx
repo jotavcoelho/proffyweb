@@ -44,7 +44,7 @@ function TeacherList() {
               { value: 'Biology', label: 'Biology' },
               { value: 'Physics', label: 'Physics' },
               { value: 'Geography', label: 'Geography' },
-              { value: 'Enlgish', label: 'Enlgish' },
+              { value: 'Enlgish', label: 'English' },
               { value: 'Spanish', label: 'Spanish' },
               { value: 'Chemistry', label: 'Chemistry' },
               { value: 'Philosophy', label: 'Philosophy' },
